@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INFO</title>
+    <style>
+        body {
+            background-color: white; 
+            color: black; 
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; 
+            height: 100vh;
+        }
+        .header {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            text-align: left; 
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .nav-link {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+        .content {
+            text-align: center; 
+            padding: 20px;
+            flex: 1; 
+        }
+        .waves {
+            position: relative;
+            width: 100%;
+            height: 30px;
+            margin-top: auto;
+            overflow: hidden;
+        }
+        .wave {
+            position: absolute;
+            width: 200%;
+            height: 100%;
+            background-repeat: repeat no-repeat;
+            background-position: 0 bottom;
+            transform-origin: center bottom;
+        }
+        .wave1 {
+            background: rgba(0, 0, 255, 0.5); 
+            animation: wave1 5s linear infinite; 
+        }
+        .wave2 {
+            background: rgba(0, 255, 0, 0.5); 
+            animation: wave2 7.5s linear infinite;
+        }
+        .wave3 {
+            background: rgba(12, 189, 224, 0.838); 
+            animation: wave3 10s linear infinite; 
+        }
+        @keyframes wave1 {
+            0% { transform: translateX(0) translateY(0) scaleY(1); }
+            50% { transform: translateX(-50%) translateY(-5px) scaleY(0.9); }
+            100% { transform: translateX(-100%) translateY(0) scaleY(1); }
+        }
+        @keyframes wave2 {
+            0% { transform: translateX(0) translateY(0) scaleY(1); }
+            50% { transform: translateX(-50%) translateY(-7px) scaleY(0.9); }
+            100% { transform: translateX(-100%) translateY(0) scaleY(1); }
+        }
+        @keyframes wave3 {
+            0% { transform: translateX(0) translateY(0) scaleY(1); }
+            50% { transform: translateX(-50%) translateY(-10px) scaleY(0.9); }
+            100% { transform: translateX(-100%) translateY(0) scaleY(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="nav">
+            <a href="index.html" class="nav-link">Home</a>
+        </div>
+    </div>
+    <div class="content">
+        <h1>What is it about?</h1>
+        <p>The goal of this project is to completely replace the components and software of the Windows OS. All the software i will show created full in open-source. My target is to create a system that is safe, efficient, and customizable for everyone.</p>
+    </div>
+    <div class="waves">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+    </div>
+</body>
+</html>

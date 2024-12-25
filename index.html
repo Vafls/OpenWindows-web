@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenWindows</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="scripts.js"></script>
+</head>
+<body>
+    <header class="header"; style="background-color: black; padding: 10px; text-align: center;">
+        <div class="left">
+            <a href="#" class="nav-link">Home</a>
+            <a href="info.html" class="nav-link">Info</a>
+            <input id="search" type="text" placeholder="Find...">
+        </div>
+        <div class="theme-toggle">
+            <label class="ios-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </header>
+
+    <main class="game-container">
+        <div class="game">
+            <div class="image-slider" id="slider1">
+                <button class="arrow prev">&lt;</button>
+                <img src="source/sca1.png" alt="File sca1.png does not exist">
+                <img src="source/sca2.png" alt="File sca2.png does not exist" style="display: none;">
+                <img src="source/sca3.png" alt="File sca3.png does not exist" style="display: none;">
+                <button class="arrow next">&gt;</button>
+            </div>
+            <h3>Notepad</h3>
+            <div class="description">Free & open source code editor</div>
+            <button class="download-btn" onclick="window.open('https://github.com/Vafls/OpenWindows-notepad', '_blank')">Get</button>
+        </div>
+
+        <div class="game">
+            <div class="image-slider" id="slider2">
+                <button class="arrow prev">&lt;</button>
+                <img src="source/scb1.png" alt="File scb1.png does not exist">
+                <img src="source/scb2.png" alt="File scb2.png does not exist" style="display: none;">
+                <img src="source/scb3.png" alt="File scb3.png does not exist" style="display: none;">
+                <button class="arrow next">&gt;</button>
+            </div>
+            <h3>Task-Manager</h3>
+            <div class="description">Manage your tasks with this free & open source analog of task manager</div>
+            <button class="download-btn" onclick="window.open('https://github.com/Vafls/OpenWindows-task-manager', '_blank')">Get</button>
+        </div>
+    </main>
+
+    <footer style="background-color: black; padding: 10px; text-align: center;">
+        <a href="https://www.youtube.com" target="_blank">
+            <img src="source/dc.png" alt="YouTube" />
+        </a>
+    </footer>
+</body>
+</html>
