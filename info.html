@@ -1,101 +1,203 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INFO</title>
-    <style>
-        body {
-            background-color: white; 
-            color: black; 
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start; 
-            height: 100vh;
-        }
-        .header {
-            background-color: black;
-            color: white;
-            padding: 10px;
-            text-align: left; 
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-        }
-        .nav-link {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-        .nav-link:hover {
-            text-decoration: underline;
-        }
-        .content {
-            text-align: center; 
-            padding: 20px;
-            flex: 1; 
-        }
-        .waves {
-            position: relative;
-            width: 100%;
-            height: 30px;
-            margin-top: auto;
-            overflow: hidden;
-        }
-        .wave {
-            position: absolute;
-            width: 200%;
-            height: 100%;
-            background-repeat: repeat no-repeat;
-            background-position: 0 bottom;
-            transform-origin: center bottom;
-        }
-        .wave1 {
-            background: rgba(0, 0, 255, 0.5); 
-            animation: wave1 5s linear infinite; 
-        }
-        .wave2 {
-            background: rgba(0, 255, 0, 0.5); 
-            animation: wave2 7.5s linear infinite;
-        }
-        .wave3 {
-            background: rgba(12, 189, 224, 0.838); 
-            animation: wave3 10s linear infinite; 
-        }
-        @keyframes wave1 {
-            0% { transform: translateX(0) translateY(0) scaleY(1); }
-            50% { transform: translateX(-50%) translateY(-5px) scaleY(0.9); }
-            100% { transform: translateX(-100%) translateY(0) scaleY(1); }
-        }
-        @keyframes wave2 {
-            0% { transform: translateX(0) translateY(0) scaleY(1); }
-            50% { transform: translateX(-50%) translateY(-7px) scaleY(0.9); }
-            100% { transform: translateX(-100%) translateY(0) scaleY(1); }
-        }
-        @keyframes wave3 {
-            0% { transform: translateX(0) translateY(0) scaleY(1); }
-            50% { transform: translateX(-50%) translateY(-10px) scaleY(0.9); }
-            100% { transform: translateX(-100%) translateY(0) scaleY(1); }
-        }
-    </style>
+    <title>About — OpenWindows</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="scripts.js"></script>
 </head>
-<body>
-    <div class="header">
-        <div class="nav">
-            <a href="index.html" class="nav-link">Home</a>
+<body class="info-page">
+
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav-inner">
+            <div class="nav-brand">
+                <div class="brand-logo">
+                    <span class="logo-square s1"></span>
+                    <span class="logo-square s2"></span>
+                    <span class="logo-square s3"></span>
+                    <span class="logo-square s4"></span>
+                </div>
+                <span class="brand-name">OpenWindows</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="info.html" class="nav-link active">About</a>
+                <a href="index.html#apps" class="nav-link">Apps</a>
+            </div>
+            <div class="nav-right">
+                <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Info Hero -->
+    <section class="info-hero">
+        <div class="info-hero-bg">
+            <div class="hero-mesh"></div>
         </div>
-    </div>
-    <div class="content">
-        <h1>What is it about?</h1>
-        <p>The goal of this project is to completely replace the components and software of the Windows OS. All the software i will show created full in open-source. My target is to create a system that is safe, efficient, and customizable for everyone.</p>
-    </div>
-    <div class="waves">
-        <div class="wave wave1"></div>
-        <div class="wave wave2"></div>
-        <div class="wave wave3"></div>
-    </div>
+        <div class="info-hero-content reveal">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                About the Project
+            </div>
+            <h1 class="hero-title">What is <span class="gradient-text">OpenWindows?</span></h1>
+            <p class="hero-subtitle">An open-source mission to rebuild Windows, piece by piece.</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-section">
+        <div class="about-grid">
+
+            <div class="about-card reveal" data-delay="0">
+                <div class="about-card-icon">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <rect x="6" y="6" width="16" height="16" rx="2" fill="#0078D4"/>
+                        <rect x="26" y="6" width="16" height="16" rx="2" fill="#0078D4" opacity="0.6"/>
+                        <rect x="6" y="26" width="16" height="16" rx="2" fill="#0078D4" opacity="0.6"/>
+                        <rect x="26" y="26" width="16" height="16" rx="2" fill="#0078D4" opacity="0.3"/>
+                    </svg>
+                </div>
+                <h3>The Goal</h3>
+                <p>To completely replace every component and piece of software in the Windows OS with free, open-source alternatives — creating a system that is safe, efficient, and customizable for everyone.</p>
+            </div>
+
+            <div class="about-card reveal" data-delay="100">
+                <div class="about-card-icon">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <circle cx="24" cy="24" r="18" stroke="#0078D4" stroke-width="2" fill="rgba(0,120,212,0.1)"/>
+                        <path d="M16 24L21 29L32 18" stroke="#0078D4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>Our Values</h3>
+                <p>Transparency over telemetry. Community over corporation. Every single line of code is public, auditable, and free — no hidden tracking, no ads, no licensing fees.</p>
+            </div>
+
+            <div class="about-card reveal" data-delay="200">
+                <div class="about-card-icon">
+                    <svg viewBox="0 0 48 48" fill="none">
+                        <path d="M24 6L42 18V30L24 42L6 30V18L24 6Z" stroke="#0078D4" stroke-width="2" fill="rgba(0,120,212,0.1)"/>
+                        <path d="M24 16V24L30 28" stroke="#0078D4" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>The Vision</h3>
+                <p>A future where Windows users aren't locked into proprietary tools. Where every system utility — from the text editor to the task manager — can be replaced with something better, open, and community-driven.</p>
+            </div>
+
+        </div>
+
+        <!-- Big statement -->
+        <div class="big-statement reveal">
+            <blockquote>
+                "Software should be <em>yours</em> — readable, modifiable, and freely shared."
+            </blockquote>
+            <div class="statement-line"></div>
+        </div>
+
+        <!-- Roadmap -->
+        <div class="roadmap reveal">
+            <h2 class="section-title">Roadmap</h2>
+            <div class="timeline">
+                <div class="tl-item done">
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <span class="tl-badge done">Released</span>
+                        <h4>Notepad</h4>
+                        <p>Open-source code editor replacing Windows Notepad</p>
+                    </div>
+                </div>
+                <div class="tl-item done">
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <span class="tl-badge done">Released</span>
+                        <h4>Task Manager</h4>
+                        <p>System monitor and process manager replacement</p>
+                    </div>
+                </div>
+                <div class="tl-item upcoming">
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <span class="tl-badge upcoming">Upcoming</span>
+                        <h4>File Explorer</h4>
+                        <p>A modern, open-source file manager replacement</p>
+                    </div>
+                </div>
+                <div class="tl-item upcoming">
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <span class="tl-badge upcoming">Planned</span>
+                        <h4>Settings App</h4>
+                        <p>Unified system settings panel</p>
+                    </div>
+                </div>
+                <div class="tl-item upcoming">
+                    <div class="tl-dot"></div>
+                    <div class="tl-content">
+                        <span class="tl-badge upcoming">Planned</span>
+                        <h4>And much more...</h4>
+                        <p>The full Windows experience, reimagined</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="info-cta reveal">
+            <h3>Want to contribute?</h3>
+            <p>OpenWindows is community-driven. Open a PR, report bugs, or star a repo.</p>
+            <div class="cta-btns">
+                <a href="https://github.com/Vafls" target="_blank" class="btn-primary fluent-btn ripple">
+                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                    GitHub
+                </a>
+                <a href="index.html" class="btn-ghost fluent-btn">← Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="brand-logo small">
+                    <span class="logo-square s1"></span>
+                    <span class="logo-square s2"></span>
+                    <span class="logo-square s3"></span>
+                    <span class="logo-square s4"></span>
+                </div>
+                <span>OpenWindows</span>
+            </div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="info.html">About</a>
+                <a href="https://github.com/Vafls" target="_blank">GitHub</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2024 OpenWindows. Open Source.</span>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M8 12V4M8 4L4 8M8 4L12 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+
 </body>
 </html>

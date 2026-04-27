@@ -1,59 +1,306 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OpenWindows</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script defer src="scripts.js"></script>
 </head>
 <body>
-    <header class="header"; style="background-color: black; padding: 10px; text-align: center;">
-        <div class="left">
-            <a href="#" class="nav-link">Home</a>
-            <a href="info.html" class="nav-link">Info</a>
-            <input id="search" type="text" placeholder="Find...">
-        </div>
-        <div class="theme-toggle">
-            <label class="ios-switch">
-                <input type="checkbox" id="theme-toggle">
-                <span class="slider"></span>
-            </label>
-        </div>
+
+    <!-- Cursor glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav-inner">
+            <div class="nav-brand">
+                <div class="brand-logo">
+                    <span class="logo-square s1"></span>
+                    <span class="logo-square s2"></span>
+                    <span class="logo-square s3"></span>
+                    <span class="logo-square s4"></span>
+                </div>
+                <span class="brand-name">OpenWindows</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="#" class="nav-link active">Home</a>
+                <a href="info.html" class="nav-link">About</a>
+                <a href="#apps" class="nav-link">Apps</a>
+            </div>
+
+            <div class="nav-right">
+                <div class="search-wrap">
+                    <svg class="search-icon" viewBox="0 0 16 16" fill="none">
+                        <circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.4"/>
+                        <path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                    </svg>
+                    <input id="search" type="text" placeholder="Search apps...">
+                </div>
+                <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
     </header>
 
-    <main class="game-container">
-        <div class="game">
-            <div class="image-slider" id="slider1">
-                <button class="arrow prev">&lt;</button>
-                <img src="source/sca1.png" alt="File sca1.png does not exist">
-                <img src="source/sca2.png" alt="File sca2.png does not exist" style="display: none;">
-                <img src="source/sca3.png" alt="File sca3.png does not exist" style="display: none;">
-                <button class="arrow next">&gt;</button>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-mesh"></div>
+            <div class="hero-grid"></div>
+        </div>
+        <div class="hero-content reveal">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Open Source · Free Forever
             </div>
-            <h3>Notepad</h3>
-            <div class="description">Free & open source code editor</div>
-            <button class="download-btn" onclick="window.open('https://github.com/Vafls/OpenWindows-notepad', '_blank')">Get</button>
+            <h1 class="hero-title">
+                Windows, <br>
+                <span class="gradient-text">reimagined</span><br>
+                open.
+            </h1>
+            <p class="hero-subtitle">
+                A collection of free, open-source alternatives to Windows components — built for everyone who believes software should be transparent, efficient, and customizable.
+            </p>
+            <div class="hero-actions">
+                <a href="#apps" class="btn-primary fluent-btn">
+                    <span>Browse Apps</span>
+                    <svg viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+                <a href="info.html" class="btn-ghost fluent-btn">
+                    <span>Learn more</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat"><span class="stat-num">2+</span><span class="stat-label">Apps</span></div>
+                <div class="stat-div"></div>
+                <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Open Source</span></div>
+                <div class="stat-div"></div>
+                <div class="stat"><span class="stat-num">Free</span><span class="stat-label">Always</span></div>
+            </div>
+        </div>
+        <div class="hero-visual reveal-right">
+            <div class="floating-card fc1">
+                <div class="fc-icon">📝</div>
+                <span>Notepad</span>
+            </div>
+            <div class="floating-card fc2">
+                <div class="fc-icon">⚙️</div>
+                <span>Task Manager</span>
+            </div>
+            <div class="floating-card fc3">
+                <div class="fc-icon">🚀</div>
+                <span>Coming Soon</span>
+            </div>
+            <div class="hero-window">
+                <div class="win-titlebar">
+                    <div class="win-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <span class="win-title">OpenWindows</span>
+                    <div class="win-btns">
+                        <span>─</span><span>□</span><span>✕</span>
+                    </div>
+                </div>
+                <div class="win-body">
+                    <div class="win-line"></div>
+                    <div class="win-line short"></div>
+                    <div class="win-line medium"></div>
+                    <div class="win-line short"></div>
+                    <div class="win-pill"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apps Section -->
+    <section class="apps-section" id="apps">
+        <div class="section-header reveal">
+            <div class="section-tag">Applications</div>
+            <h2 class="section-title">Available software</h2>
+            <p class="section-sub">Each app is built from scratch as a clean, open-source replacement.</p>
         </div>
 
-        <div class="game">
-            <div class="image-slider" id="slider2">
-                <button class="arrow prev">&lt;</button>
-                <img src="source/scb1.png" alt="File scb1.png does not exist">
-                <img src="source/scb2.png" alt="File scb2.png does not exist" style="display: none;">
-                <img src="source/scb3.png" alt="File scb3.png does not exist" style="display: none;">
-                <button class="arrow next">&gt;</button>
-            </div>
-            <h3>Task-Manager</h3>
-            <div class="description">Manage your tasks with this free & open source analog of task manager</div>
-            <button class="download-btn" onclick="window.open('https://github.com/Vafls/OpenWindows-task-manager', '_blank')">Get</button>
-        </div>
-    </main>
+        <div class="game-container" id="gameContainer">
 
-    <footer style="background-color: black; padding: 10px; text-align: center;">
-        <a href="https://www.youtube.com" target="_blank">
-            <img src="source/dc.png" alt="YouTube" />
-        </a>
+            <div class="app-card reveal" data-delay="0">
+                <div class="card-glow"></div>
+                <div class="image-slider" id="slider1">
+                    <div class="slider-track">
+                        <img src="source/sca1.png" alt="Notepad screenshot 1">
+                        <img src="source/sca2.png" alt="Notepad screenshot 2">
+                        <img src="source/sca3.png" alt="Notepad screenshot 3">
+                    </div>
+                    <button class="arrow prev" aria-label="Previous">
+                        <svg viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <button class="arrow next" aria-label="Next">
+                        <svg viewBox="0 0 16 16" fill="none"><path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="slider-dots"></div>
+                </div>
+                <div class="card-body">
+                    <div class="card-meta">
+                        <span class="card-badge open-source">Open Source</span>
+                        <span class="card-badge free">Free</span>
+                    </div>
+                    <h3 class="card-title">Notepad</h3>
+                    <p class="card-desc">A clean, lightweight code editor built to replace the default Windows Notepad with more power and flexibility.</p>
+                    <div class="card-footer">
+                        <div class="card-tags">
+                            <span class="tag">Editor</span>
+                            <span class="tag">Text</span>
+                        </div>
+                        <button class="download-btn fluent-btn ripple" onclick="window.open('https://github.com/Vafls/OpenWindows-notepad', '_blank')">
+                            <svg viewBox="0 0 16 16" fill="none"><path d="M8 2V10M8 10L5 7M8 10L11 7M3 13H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Get
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="app-card reveal" data-delay="100">
+                <div class="card-glow"></div>
+                <div class="image-slider" id="slider2">
+                    <div class="slider-track">
+                        <img src="source/scb1.png" alt="Task Manager screenshot 1">
+                        <img src="source/scb2.png" alt="Task Manager screenshot 2">
+                        <img src="source/scb3.png" alt="Task Manager screenshot 3">
+                    </div>
+                    <button class="arrow prev" aria-label="Previous">
+                        <svg viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <button class="arrow next" aria-label="Next">
+                        <svg viewBox="0 0 16 16" fill="none"><path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                    <div class="slider-dots"></div>
+                </div>
+                <div class="card-body">
+                    <div class="card-meta">
+                        <span class="card-badge open-source">Open Source</span>
+                        <span class="card-badge free">Free</span>
+                    </div>
+                    <h3 class="card-title">Task Manager</h3>
+                    <p class="card-desc">Monitor processes, manage resources, and take full control of your system with this open-source replacement.</p>
+                    <div class="card-footer">
+                        <div class="card-tags">
+                            <span class="tag">System</span>
+                            <span class="tag">Monitor</span>
+                        </div>
+                        <button class="download-btn fluent-btn ripple" onclick="window.open('https://github.com/Vafls/OpenWindows-task-manager', '_blank')">
+                            <svg viewBox="0 0 16 16" fill="none"><path d="M8 2V10M8 10L5 7M8 10L11 7M3 13H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Get
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coming Soon Card -->
+            <div class="app-card coming-soon reveal" data-delay="200">
+                <div class="card-glow"></div>
+                <div class="coming-soon-img">
+                    <div class="cs-icon">
+                        <svg viewBox="0 0 64 64" fill="none">
+                            <rect x="8" y="8" width="20" height="20" rx="3" fill="#0078D4" opacity="0.3"/>
+                            <rect x="36" y="8" width="20" height="20" rx="3" fill="#0078D4" opacity="0.5"/>
+                            <rect x="8" y="36" width="20" height="20" rx="3" fill="#0078D4" opacity="0.5"/>
+                            <rect x="36" y="36" width="20" height="20" rx="3" fill="#0078D4" opacity="0.3"/>
+                            <circle cx="32" cy="32" r="8" fill="#0078D4"/>
+                            <path d="M29 32L31 34L35 30" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <span class="cs-label">More coming soon</span>
+                </div>
+                <div class="card-body">
+                    <div class="card-meta">
+                        <span class="card-badge upcoming">Upcoming</span>
+                    </div>
+                    <h3 class="card-title">Next App</h3>
+                    <p class="card-desc">More open-source Windows replacements are in development. Star the repo to stay updated.</p>
+                    <div class="card-footer">
+                        <div class="card-tags">
+                            <span class="tag">Soon</span>
+                        </div>
+                        <button class="download-btn fluent-btn ripple" onclick="window.open('https://github.com/Vafls', '_blank')">
+                            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                            GitHub
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Feature Banner -->
+    <section class="feature-banner reveal">
+        <div class="banner-inner">
+            <div class="banner-icon">
+                <svg viewBox="0 0 48 48" fill="none">
+                    <path d="M24 4L44 16V32L24 44L4 32V16L24 4Z" stroke="#0078D4" stroke-width="2" fill="rgba(0,120,212,0.1)"/>
+                    <path d="M24 4V44M4 16L44 16M4 32L44 32" stroke="#0078D4" stroke-width="1" opacity="0.4"/>
+                </svg>
+            </div>
+            <div class="banner-text">
+                <h3>Built on open principles</h3>
+                <p>Every line of code is publicly auditable. No telemetry, no ads, no compromises.</p>
+            </div>
+            <a href="https://github.com/Vafls" target="_blank" class="btn-outline fluent-btn ripple">
+                View on GitHub
+                <svg viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="brand-logo small">
+                    <span class="logo-square s1"></span>
+                    <span class="logo-square s2"></span>
+                    <span class="logo-square s3"></span>
+                    <span class="logo-square s4"></span>
+                </div>
+                <span>OpenWindows</span>
+            </div>
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="info.html">About</a>
+                <a href="https://github.com/Vafls" target="_blank">GitHub</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://github.com/Vafls" target="_blank" class="social-link" aria-label="GitHub">
+                    <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+                </a>
+                <a href="https://www.youtube.com" target="_blank" class="social-link" aria-label="Discord">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2024 OpenWindows. Open Source.</span>
+        </div>
     </footer>
+
+    <!-- Scroll to top -->
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <svg viewBox="0 0 16 16" fill="none"><path d="M8 12V4M8 4L4 8M8 4L12 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+
 </body>
 </html>
